@@ -1,0 +1,6 @@
+The problem of the code is located in calculating t3 (line 11) when finding result 2.
+We can see that there is a division by 0, so that's why the bug takes place when running the code.
+
+The values for finding result 2 are: a = 0, b = 2, c = 3 and d = 3
+When using the step into we can see that t0 gives 2 and then t1 = 0. However, when calculating t3 = 2 * (t0 / t1),
+python gives an error because it computes 2/0

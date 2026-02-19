@@ -24,5 +24,12 @@ def seq_count_base(seq, base):
             count += 1
     return count
 
+def seq_count(seq):
+    d = {"A": 0, "C": 0, "G": 0, "T": 0}
+    for letter in seq:
+        if letter in d:
+            d[letter] += 1
+    return d
+
 
 

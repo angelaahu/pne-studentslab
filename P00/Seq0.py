@@ -31,5 +31,14 @@ def seq_count(seq):
             d[letter] += 1
     return d
 
+def seq_reverse(seq, n):
+    list = []
+    seq_rev = seq[::-1]
+    for letter in seq_rev:
+        if len(list) < n:
+            list.append(letter)
+    new_seq = "".join(list)
+    return new_seq
+
 
 

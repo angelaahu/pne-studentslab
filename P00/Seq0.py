@@ -16,3 +16,13 @@ def seq_read_fasta(filename):
 def seq_len(seq):
     return len(seq)
 
+def seq_count_base(seq, base):
+    #return seq.count(base)
+    count = 0
+    for letter in seq:
+        if letter == base:
+            count += 1
+    return count
+
+
+

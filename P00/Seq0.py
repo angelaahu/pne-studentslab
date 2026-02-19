@@ -12,3 +12,7 @@ def seq_read_fasta(filename):
             sequences.append(line.strip())
     sequence = "".join(sequences)
     return sequence
+
+def seq_len(seq):
+    return len(seq)
+

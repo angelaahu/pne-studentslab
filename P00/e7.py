@@ -8,4 +8,3 @@ print("------ Exercise 7 ------")
 print("Gene U5")
 print("Original frag:", fragment)
 print("Complementary:", seq_complement(fragment))
-

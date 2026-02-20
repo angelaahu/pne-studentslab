@@ -1,5 +1,4 @@
 from Seq0 import *
-
 print("----- Exercise 8 ----")
 genes = ["U5", "ADA", "FRAT1", "FXN"]
 
@@ -17,4 +16,9 @@ for gene in genes:
 
     print("Gene " + str(gene) + ": Most frequent Base:", most_repeated_base)
 
+#alternative way using .items and dict
+#for base, count in bases_count.items():
+#   if count > highest_count:
+#       highest_count = count
+#       most_repeated_base = base
 

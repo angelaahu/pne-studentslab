@@ -26,16 +26,16 @@ class Seq:
         return len(self.strbases)
 
 
-def print_seqs(seq_list, color):
-    for i in range(len(seq_list)):
-        termcolor.cprint(("Sequence", i, f": (Length: {seq_list[i].len()})", seq_list[i]), color)
-
 def generate_seqs(pattern, number):
     list = []
     for i in range(1, number + 1):
         list.append(Seq(pattern * i))
     return list
 
+
+def print_seqs(seq_list, color):
+    for i in range(len(seq_list)):
+        termcolor.cprint(f"Sequence {i} : (Length: {seq_list[i].len()}) {seq_list[i]}", color)
 
 
 seq_list1 = generate_seqs("A", 3)
@@ -46,4 +46,4 @@ print_seqs(seq_list1, "blue")
 
 print()
 print("List 2:")
-print(print_seqs(seq_list2, "green"))
+print_seqs(seq_list2, "green")

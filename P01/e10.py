@@ -1,14 +1,13 @@
 from Seq1 import Seq
 
-def most_repeated():
-
-    most_repeated_base = ""
+def most_frequent(bases_count):
     highest_count = 0
+    most_repeated_base = ""
     for base in bases_count:
         if bases_count[base] > highest_count:
             highest_count = bases_count[base]
             most_repeated_base = base
-
+    return most_repeated_base
 
 print("-----| Practice 1, Exercise 10 |------")
 
@@ -19,14 +18,6 @@ for gene in genes:
     seq = Seq()
     seq.read_fasta(file)
 
-    sequence = seq.read_fasta(files)
     bases_count = seq.count()
 
-    most_repeated_base = ""
-    highest_count = 0
-    for base in bases_count:
-        if bases_count[base] > highest_count:
-            highest_count = bases_count[base]
-            most_repeated_base = base
-
-    print("Gene " + str(gene) + ": Most frequent Base:", most_repeated_base)
+    print("Gene " + str(gene) + ": Most frequent Base:", most_frequent(bases_count))

@@ -19,25 +19,24 @@ class Seq:
             self.strbases = "ERROR"
             print("Error, incorrect sequence!")
 
-
     def __str__(self):
         return self.strbases
 
     def len(self):
         return len(self.strbases)
 
+
+
 def print_seqs(seq_list):
     for i in range(len(seq_list)):
         print("Sequence", i, f": (Length: {seq_list[i].len()})", seq_list[i])
 
 
-def generate_seqs(patter, number):
-
-
-
-
-
-
+def generate_seqs(pattern, number):
+    list = []
+    for i in range(1, number + 1):
+        list.append(Seq(pattern * i))
+    return list
 
 
 seq_list1 = generate_seqs("A", 3)

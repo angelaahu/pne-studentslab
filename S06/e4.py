@@ -1,6 +1,5 @@
 import termcolor
 class Seq:
-    """A class for representing sequences"""
 
     def __init__(self, strbases):
         self.strbases = strbases
@@ -31,7 +30,6 @@ def generate_seqs(pattern, number):
     for i in range(1, number + 1):
         list.append(Seq(pattern * i))
     return list
-
 
 def print_seqs(seq_list, color):
     for i in range(len(seq_list)):

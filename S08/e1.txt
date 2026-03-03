@@ -1,0 +1,4 @@
+Machine, Interface, Date, Place, IP
+mobile, Wifi, March 3rd, lab, 10.1.138.63
+Lab computer, Wire, March 3rd, lab, 212.128.255.68
+

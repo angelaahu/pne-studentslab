@@ -14,7 +14,7 @@ print(c)
 
 gene = "FRAT1"
 s = Seq()
-s.read_fasta("/home/alumnos/angelahu/PycharmProjects/pne-studentslab/S04/Sequences/" + gene + ".txt")
+s.read_fasta("/home/alumnos/angelahu/PycharmProjects/pne-studentslab/S04/sequences/" + gene + ".txt")
 
 send_frat = c.talk("Sending FRAT1 gene to the server, in fragments of 10 bases...")
 print(f"Gene FRAT1: {s}")

@@ -15,7 +15,7 @@ print(c)
 genes = ["U5", "FRAT1", "ADA"]
 for i in range(len(genes)):
     s = Seq()
-    s.read_fasta(("/home/alumnos/angelahu/PycharmProjects/pne-studentslab/S04/Sequences/" + genes[i] + ".txt"))
+    s.read_fasta(("/home/alumnos/angelahu/PycharmProjects/pne-studentslab/S04/sequences/"+ genes[i] + ".txt"))
     message = f"Sending the {genes[i]} Gene to the server..."
     print(f"To the Server: {message}")
     response = c.talk(message)

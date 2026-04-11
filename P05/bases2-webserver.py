@@ -1,6 +1,7 @@
 import http.server
 import socketserver
 import termcolor
+from pathlib import Path
 
 # Define the Server's port
 PORT = 8080
@@ -26,13 +27,27 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
         # that everything is ok
 
         # Message to send back to the client
-        contents = "I am the happy server! :-)"
+        path = self.requestline.split(" ")[1]
+        status_num = 200
+        try:
+            if path == "/":
+                contents = Path("html/index.html").read_text()
+            elif path == "/index":
+                contents = Path("html/index.html").read_text()
+            else:
+                contents = Path("html" + path).read_text()
+
+        except FileNotFoundError:
+            status_num = 404
+            contents = Path("html/error.html").read_text()
+
 
         # Generating the response message
-        self.send_response(200)  # -- Status line: OK!
+        self.send_response(status_num)  # -- Status line: OK!
+
 
         # Define the content-type header:
-        self.send_header('Content-Type', 'text/plain')
+        self.send_header('Content-Type', 'text/html')
         self.send_header('Content-Length', len(contents.encode()))
 
         # The header is finished
@@ -49,21 +64,6 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
 # ------------------------
 # -- Set the new handler
 Handler = TestHandler
-
-# -- Open the socket server
-with socketserver.TCPServer(("", PORT), Handler) as httpd:
-
-    print("Serving at PORT", PORT)
-
-    # -- Main loop: Attend the client. Whenever there is a new
-    # -- clint, the handler is called
-    try:
-        httpd.serve_forever()
-    except KeyboardInterrupt:
-        print("")
-        print("Stopped by the user")
-        httpd.server_close()
-
 
 # -- Open the socket server
 with socketserver.TCPServer(("", PORT), Handler) as httpd:

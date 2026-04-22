@@ -58,7 +58,6 @@ try:
     else:
         print(f"{gene_name} not a valid gene name")
 
-
 except KeyError:
     print("Not valid")
 

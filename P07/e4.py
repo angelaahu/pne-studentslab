@@ -44,10 +44,16 @@ try:
             percentage = round((value / seq_len) * 100, 1)
             print(f"{key}: {value} ({percentage})%")
 
+        def find_most_freq():
+            max_num = 0
+            max_base = None
+            for base, number in bases_info.items():
+                if number > max_num:
+                    max_num = number
+                    max_base = base
+            return max_base
 
-
-
-
+        print(f"Most frequent Base: {find_most_freq()}")
 
     else:
         print(f"{gene_name} not a valid gene name")
@@ -55,7 +61,7 @@ try:
 
 except KeyError:
     print("Not valid")
+
 except ConnectionRefusedError:
     print("ERROR! Cannot connect to the Server")
     exit()
-

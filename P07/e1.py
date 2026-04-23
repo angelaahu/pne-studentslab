@@ -32,4 +32,4 @@ data1 = r1.read().decode("utf-8")
 response = json.loads(data1)
 
 if response["ping"] == 1:
-    print("ALIVE! The database is running")
+    print("ALIVE! PING OK! The database is running")

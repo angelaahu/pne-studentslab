@@ -2,23 +2,101 @@
     <html lang="en" dir="ltr">
       <head>
         <meta charset="utf-8">
-        <title>Browsing genomes</title>
+        <title>PNE final project</title>
       </head>
 
-      <body style="background-color: #EDC999;">
-        <h1>Browsing Human and Vertebrates genome</h1>
+      <body style="background-color: white;">
+        <header style="background-color: lightblue;">
+            <h1>BROWSING HUMAN AND VERTEBRATES GENOME</h1>
+        </header>
         <h2>BASIC Level Services</h2>
-
-        <form action="listSpecies" method="get">
-            <p>1) List of species in the genome database</p>
-            Limit <input type="text" name="number">
+        <p>1) List of species in the genome database</p>
+        <form action="/listSpecies" method="get">
+            Limit:
+            <input type="text" name="limit">
             <br><br>
-            <input type="submit" value="Send">
+            <input type="submit"  style="border-color: lightblue;" value="SEND">
+            JSON format
+            <input type="checkbox" name="json" value="1">
         </form>
+      <br><br>
+        2) Information about the karyotype:
+        <br><br>
+      <form action="/karyotype" method="get">
+          Select the species:
+          <input type="text" name="species">
+          <br><br>
+          <input type="submit" style="border-color: lightblue;" value="SEND">
 
+          JSON format
+          <input type="checkbox" name="json" value="1">
+      </form>
+      <br>
+      <form action="/chromosomeLength" method="get">
+          <p>3) Chromosome Length</p>
+          Select the species:
+          <input type="text" name="species">
+          <p>Select a chromosome:
+          <input type="text" name="chromo"></p>
+          <input type="submit" style="border-color: lightblue;"  value="SEND">
+          JSON format
+          <input type="checkbox" name="json" value="1">
+      </form>
+        <br>
+        <hr>
 
+      <h2>MEDIUM Level Services (JUST FOR HUMAN SPECIES)</h2>
+      <form action="/geneLookup" method="get">
+          <p>1) Return the stable identifier (Ensembl id) of the human gene.</p>
+          Introduce a human gene:
+          <input type="text" name="gene">
+          <input type="submit" style="border-color: lightblue;" value="SEND">
 
+          JSON format
+          <input type="checkbox" name="json" value="1">
+      </form>
+        <br>
 
+      <form action="/geneSeq" method="get">
+          <p>2) Get a sequence of a human gene</p>
+          Introduce a human gene:
+          <input type="text" name="gene">
+          <input type="submit" style="border-color: lightblue;" value="SEND">
+          JSON format
+          <input type="checkbox" name="json" value="1">
+      </form>
+      <br>
+      <form action="/geneInfo" method="get">
+          <p>3) Return information about a given human gene</p>
+          Introduce a human gene:
+          <input type="text" name="gene">
+          <input type="submit" style="border-color: lightblue;" value="SEND">
+          JSON format
+          <input type="checkbox" name="json" value="1">
+      </form>
+      <br>
+      <form action="/geneCalc" method="get">
+          <p>4) Perform some calculations about a gene (length & percentage of bases)</p>
+          Introduce a human gene:
+          <input type="text" name="gene">
+          <input type="submit" style="border-color: lightblue;"  value="SEND">
+          JSON format
+          <input type="checkbox" name="json" value="1">
+      </form>
+      <br>
+      <form action="/geneList" method="get">
+          <p>5) Return the names of the human gene that overlap a region in a chromosome</p>
+          <p>Introduce the chromosome:
+              <input type="text" name="chromo"></p>
+          <p>Introduce a starting point:
+              <input type="text" name="start"></p>
+          <p>Introduce an ending point:
+              <input type="text" name="end"></p>
+          <input type="submit" style="border-color: lightblue;" value="SEND">
+
+          JSON format
+          <input type="checkbox" name="json" value="1">
+      </form>
 
 
 
